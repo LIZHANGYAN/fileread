@@ -30,9 +30,8 @@ title('3D-cloud');
 hold on;
 % Read 3D landmarks
 [pts3D, labels] = read_lm3file('bs000_CAU_A22A25_0.lm3');
-p1 = pts3D(:,1);
-p2 = pts3D(:,22);
-plot3([p1(1) p2(1)],[p1(2) p2(2)],[p1(3) p2(3)],"LineWidth",1.5);
+xx =
+plot3(pts3D(:,1),pts3D(:,22),"LineWidth",1.5);
 for i = 1:length(labels)
     xyz_lm3 = pts3D(:,i);
     text(xyz_lm3(1),xyz_lm3(2),xyz_lm3(3),labels(i));
