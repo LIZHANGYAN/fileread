@@ -34,3 +34,5 @@ for i = 1:length(labels)
     xyz_lm3 = pts3D(:,i);
     text(xyz_lm3(1),xyz_lm3(2),xyz_lm3(3),labels(i));
 end
+axis equal; shading interp; lighting phong; camlight; axis off; view(0,90)
+colormap gray
