@@ -138,7 +138,7 @@ tic;
 for k=1:N
      D = min(D,repmat(D(:,k),[1 N])+repmat(D(k,:),[N 1])); 
      if ((verbose == 1) & (rem(k,20) == 0)) 
-          disp([' Iteration: ' num2str(k) '     Estimated time to completion: 'num2str((N-k)*toc/k/60) ' minutes']); 
+          disp(["Iteration: " num2str(k) "Estimated time to completion: " num2str((N-k)*toc/k/60) "minutes"]); 
      end
 end
 

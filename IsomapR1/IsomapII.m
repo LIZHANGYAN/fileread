@@ -176,7 +176,7 @@ if ((mode == 1) & (use_dijk == 0))
          for i=1:N
              D(i,ind((2+K):end,i)) = INF; 
              if ((verbose == 1) & (rem(i,50) == 0)) 
-                 disp([' Iteration: ' num2str(i) '     Estimated time to completion: 'num2str((N-i)*toc/60/50) ' minutes']); tic; 
+                 disp([" Iteration: " num2str(i) "     Estimated time to completion: " num2str((N-i)*toc/60/50) " minutes"]); tic; 
              end
          end
      elseif n_fcn == 'epsilon'
@@ -193,7 +193,7 @@ elseif ((mode == 1) & (use_dijk == 1))
          for i=1:N
              D(i,ind((2+K):end,i)) = 0; 
              if ((verbose == 1) & (rem(i,50) == 0)) 
-                 disp([' Iteration: ' num2str(i) '     Estimated time to completion: 'num2str((N-i)*toc/60/50) ' minutes']); tic; 
+                 disp([' Iteration: ' num2str(i) '     Estimated time to completion: ' num2str((N-i)*toc/60/50) ' minutes']); tic; 
              end
          end
      elseif n_fcn == 'epsilon'
@@ -215,7 +215,7 @@ elseif (mode == 2)
              Ds(counter+(1:K)) = g(1:K); 
              counter = counter+K; 
              if ((verbose == 1) & (rem(i,50) == 0)) 
-                  disp([' Iteration: ' num2str(i) '     Estimated time to completion: 'num2str((N-i)*toc/60/50) ' minutes']); tic; 
+                  disp([' Iteration: ' num2str(i) '     Estimated time to completion: ' num2str((N-i)*toc/60/50) ' minutes']); tic; 
              end
          end
          D = sparse(Di(1:counter), Dj(1:counter), Ds(1:counter));
@@ -245,7 +245,7 @@ elseif (mode == 3)
              counter = counter+l; 
          end
          if ((verbose == 1) & (rem(i,50) == 0)) 
-              disp([' Iteration: ' num2str(i) '     Estimated time to completion: 'num2str((N-i)*toc/60/50) ' minutes']); tic; 
+              disp([" Iteration: " num2str(i) "     Estimated time to completion: " num2str((N-i)*toc/60/50) " minutes"]); tic; 
          end
      end
      D = sparse(Di(1:counter), Dj(1:counter), Ds(1:counter));
@@ -270,7 +270,7 @@ if ((mode==1) & (use_dijk == 0))
      for k=1:N
          D = min(D,repmat(D(:,k),[1 N])+repmat(D(k,:),[N 1])); 
          if ((verbose == 1) & (rem(k,20) == 0)) 
-              disp([' Iteration: ' num2str(k) '     Estimated time to completion: 'num2str((N-i)*toc/i/60) ' minutes']); 
+              disp([" Iteration: " num2str(k) "     Estimated time to completion: " num2str((N-i)*toc/i/60) " minutes"]); 
          end
      end
 else
